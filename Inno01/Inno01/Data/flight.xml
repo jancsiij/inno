@@ -1,0 +1,38 @@
+﻿<?xml version="1.0"?>
+<root>
+
+
+  <airlines>
+    <arilnine>
+      <id>1</id>
+      <name>Wizz</name>
+    </arilnine>
+    <airline>
+      <id>2</id>
+      <name>Jet2</name>
+    </airline>
+    <airline>
+      <id>3</id>
+      <name>Lufthansa</name>
+    </airline>
+  </airlines>
+
+  <flights>
+    <flight>
+      <id>l1</id>
+      <airlineID>3</airlineID>
+      <origin>LTN</origin>
+      <destination>BUD</destination>
+      <time>200</time>
+    </flight>
+  
+    <flight>
+      <id>l2</id>
+      <airlineID>3</airlineID>
+      <origin>LTN</origin>
+      <destination>BUD</destination>
+      <time>200</time>
+    </flight>
+  </flights>
+
+</root>
