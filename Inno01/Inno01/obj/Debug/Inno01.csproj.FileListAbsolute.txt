@@ -9,3 +9,10 @@ D:\Dokumentumok\git\szakdolg\project\Inno01\Inno01\bin\Debug\EntityFramework.dll
 D:\Dokumentumok\git\szakdolg\project\Inno01\Inno01\bin\Debug\EntityFramework.SqlServer.dll
 D:\Dokumentumok\git\szakdolg\project\Inno01\Inno01\bin\Debug\EntityFramework.xml
 D:\Dokumentumok\git\szakdolg\project\Inno01\Inno01\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Doge\Documents\git\inno\Inno01\Inno01\bin\Debug\Inno01.exe.config
+C:\Users\Doge\Documents\git\inno\Inno01\Inno01\obj\Debug\Inno01.csprojResolveAssemblyReference.cache
+C:\Users\Doge\Documents\git\inno\Inno01\Inno01\bin\Debug\Inno01.exe
+C:\Users\Doge\Documents\git\inno\Inno01\Inno01\bin\Debug\Inno01.pdb
+C:\Users\Doge\Documents\git\inno\Inno01\Inno01\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Doge\Documents\git\inno\Inno01\Inno01\obj\Debug\Inno01.exe
+C:\Users\Doge\Documents\git\inno\Inno01\Inno01\obj\Debug\Inno01.pdb

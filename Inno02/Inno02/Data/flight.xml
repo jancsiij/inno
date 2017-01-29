@@ -37,19 +37,17 @@
   <flights>
     <flight>
       <id>l1</id>
-      <airlineId>3</airlineId>
+      <airlineID>3</airlineID>
       <origin>LTN</origin>
       <destination>BUD</destination>
-      <distance>2000000</distance>
       <time>200</time>
     </flight>
   
     <flight>
       <id>l2</id>
-      <airlineId>3</airlineId>
+      <airlineID>3</airlineID>
       <origin>LTN</origin>
       <destination>BUD</destination>
-      <distance>1000000</distance>
       <time>200</time>
     </flight>
   </flights>

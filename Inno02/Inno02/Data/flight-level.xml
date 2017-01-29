@@ -19,10 +19,10 @@
   </cities>
 
   <airlines>
-    <arilnine>
+    <airline>
       <id>1</id>
       <name>Wizz</name>
-    </arilnine>
+    </airline>
     <airline>
       <id>2</id>
       <name>Jet2</name>

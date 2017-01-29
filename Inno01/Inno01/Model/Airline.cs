@@ -1,47 +1,68 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Inno01.Model
 {
-    class Airline
+    public class Airline
     {
-        private static ICollection<Airline> Airlines;
+        [NotMapped]
+        private static List<Airline> Airlines;
+        [Key]
+        public int Id { get; set; }
+
 
         public string Name { get; set; }
-        //public int Id { get; set; }
-        private ICollection<Flight> Flights { get; set; }
 
-        public Airline(string name)
+        public ICollection<Flight> Flights { get; set; }
+
+        static Airline()
         {
-            Name = name;
+            Airlines = new List<Airline>();
         }
+
 
         public static void AddAirline(Airline a)
         {
             Airlines.Add(a);
         }
 
-        public static ICollection<Flight> GetAllFlights()
+        public void AddFlight(Flight f)
         {
-            List<Flight> result = new List<Flight>();
-            foreach (Airline a in Airlines)
+            if(Flights == null)
             {
-                result.AddRange(a.GetFlights());
+                Flights = new List<Flight>();
             }
-            return result.ToArray();
+            Flights.Add(f);
         }
 
-        public  ICollection<Flight> GetFlights()
+
+        public ICollection<Flight> GetFlights()
         {
-            return Flights.ToArray();
+            return Flights.ToList();
         }
 
         public static ICollection<Airline> GetAirlines()
         {
-            return Airlines.ToArray();
+            if (Airlines != null)
+            {
+                return Airlines.ToList();
+            }
+            return new List<Airline>();
         }
+
+        //public static ICollection<Flight> GetAllFlights()
+        //{
+        //    List<Flight> result = new List<Flight>();
+        //    foreach (Airline a in Airlines)
+        //    {
+        //        result.AddRange(a.GetFlights());
+        //    }
+        //    return result.ToArray();
+        //}
     }
 }

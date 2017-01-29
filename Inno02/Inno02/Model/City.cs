@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inno01.Model
 {
-    public class City
+    class City
     {
         public string Id { get; set; }
         public string Name { get; set; }
