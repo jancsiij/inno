@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Inno01.Model
 {
-    public class Node
+    public class Graph
     {
-        public string Id { get; set; }
-        public City City { get; set; }
+        public List<City> Nodes { get; set; }
+        public List<Flight> Edges { get; set; }
     }
 }

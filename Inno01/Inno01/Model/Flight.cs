@@ -8,13 +8,13 @@ namespace Inno01.Model
 {
     public class Flight
     {
-        private static ICollection<Flight> Flights;
+        private static List<Flight> Flights = new List<Flight>();
 
-        public int Id { get; set; }
+        public string Id { get; set; }
         public City Origin { get; set; }
         public City Destination { get; set; }
         public int TimeIntervale { get; set; }
-        public float Distance { get; set; }
+        public int Distance { get; set; }
         public Airline Airline { get; set; }
 
         //public Flight(int id, City from, City to, int time, float distance)
@@ -38,9 +38,12 @@ namespace Inno01.Model
             Flights.Add(f);
         }
 
-        public ICollection<Flight> GetFlights()
+        public static List<Flight> GetFlights()
         {
-            return Flights.ToArray();
+            if(Flights != null) { 
+                return Flights.ToList();
+            }
+            return new List<Flight>();
         }
 
         public ICollection<Flight> GetFlightsByCities(City origin, City dest)
@@ -49,6 +52,11 @@ namespace Inno01.Model
             (c.Origin == origin || origin == null)
             && (c.Destination == dest || dest == null)).ToArray();
             return result;
+        }
+
+        public override string ToString()
+        {
+            return Origin.Name +" -> "+ Destination.Name+" ("+ Distance+")";
         }
     }
 }

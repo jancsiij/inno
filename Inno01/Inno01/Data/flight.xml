@@ -5,17 +5,33 @@
     <city>
       <id>BUD</id>
       <name>Budapest</name>
-      <population>1000000</population>
+      <population>10</population>
     </city>
-    <city>
-      <id>EDI</id>
-      <name>Edinburgh</name>
-      <population>3000000</population>
-    </city>
+
     <city>
       <id>LTN</id>
       <name>London Luton</name>
-      <population>4000000</population>
+      <population>2000</population>
+    </city>
+    <city>
+      <id>BER</id>
+      <name>Berlin</name>
+      <population>300</population>
+    </city>
+    <city>
+      <id>PAR</id>
+      <name>Paris</name>
+      <population>400</population>
+    </city>
+    <city>
+      <id>ROM</id>
+      <name>Rome</name>
+      <population>500</population>
+    </city>
+    <city>
+      <id>WAR</id>
+      <name>Warsaw</name>
+      <population>600</population>
     </city>
   </cities>
 
@@ -43,15 +59,98 @@
       <distance>2000000</distance>
       <time>200</time>
     </flight>
-  
+    
+
     <flight>
-      <id>l2</id>
+      <id>l4</id>
       <airlineId>3</airlineId>
-      <origin>LTN</origin>
-      <destination>BUD</destination>
-      <distance>1000000</distance>
+      <origin>BUD</origin>
+      <destination>BER</destination>
+      <distance>3000</distance>
       <time>200</time>
     </flight>
+
+    <flight>
+        <id>l5</id>
+        <airlineId>3</airlineId>
+        <origin>BUD</origin>
+        <destination>PAR</destination>
+        <distance>2000</distance>
+        <time>200</time>
+      </flight>
+      <flight>
+        <id>l6</id>
+        <airlineId>3</airlineId>
+        <origin>BER</origin>
+        <destination>PAR</destination>
+        <distance>1000</distance>
+        <time>200</time>
+      </flight>
+      <flight>
+        <id>l7</id>
+        <airlineId>3</airlineId>
+        <origin>PAR</origin>
+        <destination>BER</destination>
+        <distance>1000</distance>
+        <time>200</time>
+      </flight>
+      <flight>
+        <id>l8</id>
+        <airlineId>3</airlineId>
+        <origin>BER</origin>
+        <destination>WAR</destination>
+        <distance>2000</distance>
+        <time>200</time>
+      </flight>
+      <flight>
+        <id>l9</id>
+        <airlineId>3</airlineId>
+        <origin>WAR</origin>
+        <destination>BER</destination>
+        <distance>3000</distance>
+        <time>200</time>
+      </flight>
+      <flight>
+        <id>l10</id>
+        <airlineId>3</airlineId>
+        <origin>PAR</origin>
+        <destination>ROM</destination>
+        <distance>9000</distance>
+        <time>200</time>
+      </flight>
+      <flight>
+        <id>l10</id>
+        <airlineId>3</airlineId>
+        <origin>PAR</origin>
+        <destination>WAR</destination>
+        <distance>8000</distance>
+        <time>200</time>
+      </flight>
+      <flight>
+        <id>l11</id>
+        <airlineId>3</airlineId>
+        <origin>BER</origin>
+        <destination>ROM</destination>
+        <distance>4000</distance>
+        <time>200</time>
+      </flight>
+      <flight>
+        <id>l12</id>
+        <airlineId>3</airlineId>
+        <origin>ROM</origin>
+        <destination>LTN</destination>
+        <distance>8000</distance>
+        <time>200</time>
+      </flight>
+      <flight>
+        <id>l13</id>
+        <airlineId>3</airlineId>
+        <origin>WAR</origin>
+        <destination>LTN</destination>
+        <distance>3000</distance>
+        <time>200</time>
+    </flight>
+
   </flights>
 
 </root>

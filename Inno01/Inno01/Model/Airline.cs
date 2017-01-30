@@ -18,7 +18,7 @@ namespace Inno01.Model
 
         public string Name { get; set; }
 
-        public ICollection<Flight> Flights { get; set; }
+        public List<Flight> Flights { get; set; }
 
         static Airline()
         {
@@ -41,9 +41,10 @@ namespace Inno01.Model
         }
 
 
-        public ICollection<Flight> GetFlights()
+        public List<Flight> GetFlights()
         {
-            return Flights.ToList();
+
+            return Flights;
         }
 
         public static ICollection<Airline> GetAirlines()
