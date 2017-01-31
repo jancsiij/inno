@@ -1,18 +1,16 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Inno01.Model
 {
     public class Airline
     {
-        [NotMapped]
+  
         private static List<Airline> Airlines;
-        [Key]
+  
         public int Id { get; set; }
 
 
@@ -56,14 +54,6 @@ namespace Inno01.Model
             return new List<Airline>();
         }
 
-        //public static ICollection<Flight> GetAllFlights()
-        //{
-        //    List<Flight> result = new List<Flight>();
-        //    foreach (Airline a in Airlines)
-        //    {
-        //        result.AddRange(a.GetFlights());
-        //    }
-        //    return result.ToArray();
-        //}
+
     }
 }

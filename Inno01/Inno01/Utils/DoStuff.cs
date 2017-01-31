@@ -1,4 +1,5 @@
-﻿using Inno01.Model;
+﻿using Inno01.Helpers;
+using Inno01.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -35,38 +36,65 @@ namespace Inno01
                             Nodes = _cities,
                             Edges = item.GetFlights()
                         };
-
-                        var dijkstra = new Dijkstra(graph);
-
-                        var shortest = dijkstra.Shortestpath(lowest, hightest);
-
                         Console.WriteLine("\n" + item.Name + ": ");
 
-                        ShowResult(shortest);
+                        Plan(graph, lowest, hightest, false);
                     }
-                   
                 }
 
-              
+                var allGraph = new Graph { Edges = Flight.GetFlights(), Nodes = _cities };
+
+                Console.WriteLine("\nBármely légitársasággal a legrövidebb út:");
+                Plan(allGraph, lowest, hightest, true);
 
                 Console.ReadLine();
             }
         }
 
-        private void ShowResult(List<Flight> shortest)
+        private void Plan(Graph g, City origin, City dest, bool detailed)
         {
-            if (shortest.Count() != 0)
+            var dijkstra = new Dijkstra(g);
+
+            var shortest = dijkstra.Shortestpath(origin, dest);
+
+
+            ShowResult(shortest, detailed);
+        }
+
+        private void ShowResult(List<Flight> shortest, bool detailed)
+        {
+            int totalTime = 0;
+
+            if (shortest != null)
             {
                 foreach (Flight item in shortest)
                 {
-                    Console.WriteLine(item);
+                    if (detailed)
+                    {
+                        Console.WriteLine(item.Airline.Name + " :" + item);
+                    }
+                    else
+                    {
+                        Console.WriteLine(item);
+                    }
+
+                    totalTime += item.TimeIntervale;
+                    if (shortest.Last() != item)
+                    {
+                        var waitTime = 60 - item.TimeIntervale % 60;
+                        totalTime += waitTime;
+                        Console.WriteLine("Várazokás járatra: " + TimeHelper.ConvertToHM(waitTime));
+                    }
                 }
+                Console.WriteLine("----------");
+                Console.WriteLine("Összesen:" + TimeHelper.ConvertToHM(totalTime));
             }
-            else {
+            else
+            {
                 Console.WriteLine("Nincs útvonal!");
             }
 
-            
+
         }
 
         private void ReadData()
@@ -89,11 +117,11 @@ namespace Inno01
             }
             catch (FileNotFoundException)
             {
-                Console.WriteLine("XLM datasource not found!");
+                Console.WriteLine("XLM adatforrsá nem található");
             }
             catch (FormatException)
             {
-                Console.WriteLine("Error occured while parsing XML data. File may contain incorrect data!");
+                Console.WriteLine("Hiba törtönt beolvasás során. Helytelen adat!");
             }
 
 
@@ -104,12 +132,12 @@ namespace Inno01
             var flights = xFlights.Elements("flight").Select(f =>
                 new Flight
                 {
-                    Distance = (int.Parse(f.Element("distance").Value.ToString())),
+                    Distance = (int.Parse(f.Element("distance").Value)),
                     Id = f.Element("id").Value.ToString(),
-                    TimeIntervale = (int.Parse(f.Element("time").Value.ToString())),
+                    TimeIntervale = (int.Parse(f.Element("time").Value)),
                     Origin = _cities.SingleOrDefault(c => c.Id == f.Element("origin").Value),
                     Destination = _cities.SingleOrDefault(c => c.Id == f.Element("destination").Value),
-                    Airline = _airlines.SingleOrDefault(a => a.Id == int.Parse(f.Element("airlineId").Value.ToString()))
+                    Airline = _airlines.SingleOrDefault(a => a.Id == int.Parse(f.Element("airlineId").Value))
                 }).ToList();
 
             foreach (Flight f in flights)
@@ -132,7 +160,7 @@ namespace Inno01
                           new Airline
                           {
                               Id = int.Parse(c.Element("id").Value),
-                              Name = c.Element("name").Value.ToString()
+                              Name = c.Element("name").Value
                           }
                           )
                           .ToList();
@@ -147,8 +175,8 @@ namespace Inno01
                 new City
                 {
 
-                    Id = c.Element("id").Value.ToString(),
-                    Name = c.Element("name").Value.ToString(),
+                    Id = c.Element("id").Value,
+                    Name = c.Element("name").Value,
                     Population = int.Parse(c.Element("population").Value)
                 }).ToList();
 

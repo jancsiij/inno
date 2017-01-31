@@ -1,15 +1,12 @@
 ﻿using Inno01.Model;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Inno01
 {
     public class Dijkstra
     {
-
 
         List<City> visitedNodes = new List<City>();
         List<City> unVisitedNodes;
@@ -25,8 +22,8 @@ namespace Inno01
 
         public List<Flight> Shortestpath(City source, City dest)
         {
-
-            Dictionary<City, City> previous = new Dictionary<City, City>();
+            Stack<City> previous = new Stack<City>();
+            //Dictionary<City, City> previous = new Dictionary<City, City>();
             //Dictionary<City, int> distance = new Dictionary<City, int>();
 
 
@@ -55,7 +52,7 @@ namespace Inno01
                             shortestEdge = edge;
                         }
                     }
-                    previous.Add(closest, current);
+                    previous.Push(current);
                     visitedEdges.Add(shortestEdge);
                     //distance.Add(closest, edge.d);
                     current = closest;
@@ -63,10 +60,19 @@ namespace Inno01
                     unVisitedNodes.Remove(current);
                     visitedNodes.Add(current);
                 }
+                
                 else if(previous.Count() != 0)
                 {
-                    current = previous[current];
+                    visitedEdges.Remove(visitedEdges.Last());
+                    current = previous.Pop();
                 }
+
+                else
+                {
+                    visitedEdges = null;
+                    break;
+                }
+                
             }
 
 

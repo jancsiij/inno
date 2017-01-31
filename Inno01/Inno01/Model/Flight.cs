@@ -1,8 +1,7 @@
-﻿using System;
+﻿using Inno01.Helpers;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Inno01.Model
 {
@@ -17,16 +16,6 @@ namespace Inno01.Model
         public int Distance { get; set; }
         public Airline Airline { get; set; }
 
-        //public Flight(int id, City from, City to, int time, float distance)
-        //{
-        //    Id = id;
-        //    From = from;
-        //    To = to;
-        //    TimeIntervale = time;
-        //    Distance = distance;
-
-        //    Flights.Add(this);
-        //}
 
         public static void AddFlight(Flight f)
         {
@@ -56,7 +45,8 @@ namespace Inno01.Model
 
         public override string ToString()
         {
-            return Origin.Name +" -> "+ Destination.Name+" ("+ Distance+")";
+            
+            return Origin.Name +" -> "+ Destination.Name+" ("+ Distance+" km) "+TimeHelper.ConvertToHM(TimeIntervale);
         }
     }
 }

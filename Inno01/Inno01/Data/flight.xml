@@ -10,7 +10,7 @@
 
     <city>
       <id>LTN</id>
-      <name>London Luton</name>
+      <name>London</name>
       <population>2000</population>
     </city>
     <city>
@@ -33,13 +33,18 @@
       <name>Warsaw</name>
       <population>600</population>
     </city>
+    <city>
+      <id>DOM</id>
+      <name>Dombóvár</name>
+      <population>600</population>
+    </city>
   </cities>
 
   <airlines>
-    <arilnine>
+    <airline>
       <id>1</id>
       <name>Wizz</name>
-    </arilnine>
+    </airline>
     <airline>
       <id>2</id>
       <name>Jet2</name>
@@ -51,14 +56,8 @@
   </airlines>
 
   <flights>
-    <flight>
-      <id>l1</id>
-      <airlineId>3</airlineId>
-      <origin>LTN</origin>
-      <destination>BUD</destination>
-      <distance>2000000</distance>
-      <time>200</time>
-    </flight>
+    <!--Lufthansa flights-->
+
     
 
     <flight>
@@ -76,7 +75,7 @@
         <origin>BUD</origin>
         <destination>PAR</destination>
         <distance>2000</distance>
-        <time>200</time>
+        <time>100</time>
       </flight>
       <flight>
         <id>l6</id>
@@ -84,7 +83,7 @@
         <origin>BER</origin>
         <destination>PAR</destination>
         <distance>1000</distance>
-        <time>200</time>
+        <time>50</time>
       </flight>
       <flight>
         <id>l7</id>
@@ -92,7 +91,7 @@
         <origin>PAR</origin>
         <destination>BER</destination>
         <distance>1000</distance>
-        <time>200</time>
+        <time>50</time>
       </flight>
       <flight>
         <id>l8</id>
@@ -100,7 +99,7 @@
         <origin>BER</origin>
         <destination>WAR</destination>
         <distance>2000</distance>
-        <time>200</time>
+        <time>100</time>
       </flight>
       <flight>
         <id>l9</id>
@@ -116,7 +115,7 @@
         <origin>PAR</origin>
         <destination>ROM</destination>
         <distance>9000</distance>
-        <time>200</time>
+        <time>300</time>
       </flight>
       <flight>
         <id>l10</id>
@@ -124,7 +123,7 @@
         <origin>PAR</origin>
         <destination>WAR</destination>
         <distance>8000</distance>
-        <time>200</time>
+        <time>240</time>
       </flight>
       <flight>
         <id>l11</id>
@@ -132,7 +131,7 @@
         <origin>BER</origin>
         <destination>ROM</destination>
         <distance>4000</distance>
-        <time>200</time>
+        <time>260</time>
       </flight>
       <flight>
         <id>l12</id>
@@ -140,7 +139,7 @@
         <origin>ROM</origin>
         <destination>LTN</destination>
         <distance>8000</distance>
-        <time>200</time>
+        <time>300</time>
       </flight>
       <flight>
         <id>l13</id>
@@ -151,6 +150,87 @@
         <time>200</time>
     </flight>
 
+    <!-- WizzAir-->
+    <flight>
+      <id>w1</id>
+      <airlineId>1</airlineId>
+      <origin>LTN</origin>
+      <destination>BUD</destination>
+      <distance>2000000</distance>
+      <time>200</time>
+    </flight>
+
+<!--
+    <flight>
+      <id>w2</id>
+      <airlineId>1</airlineId>
+      <origin>BUD</origin>
+      <destination>BER</destination>
+      <distance>3000</distance>
+      <time>200</time>
+    </flight>
+-->
+    <flight>
+      <id>w3</id>
+      <airlineId>1</airlineId>
+      <origin>BUD</origin>
+      <destination>PAR</destination>
+      <distance>2000</distance>
+      <time>200</time>
+    </flight>
+
+    <flight>
+      <id>w4</id>
+      <airlineId>3</airlineId>
+      <origin>BER</origin>
+      <destination>ROM</destination>
+      <distance>4000</distance>
+      <time>200</time>
+    </flight>
+    <flight>
+      <id>w5</id>
+      <airlineId>1</airlineId>
+      <origin>ROM</origin>
+      <destination>LTN</destination>
+      <distance>8000</distance>
+      <time>200</time>
+    </flight>
+
+    <flight>
+      <id>w5</id>
+      <airlineId>1</airlineId>
+      <origin>ROM</origin>
+      <destination>LTN</destination>
+      <distance>8000</distance>
+      <time>200</time>
+    </flight>
+
+    <flight>
+      <id>w6</id>
+      <airlineId>1</airlineId>
+      <origin>BER</origin>
+      <destination>LTN</destination>
+      <distance>1500</distance>
+      <time>200</time>
+    </flight>
+    <!--Jet2-->
+    <flight>
+      <id>j1</id>
+      <airlineId>2</airlineId>
+      <origin>BUD</origin>
+      <destination>DOM</destination>
+      <distance>30000</distance>
+      <time>200</time>
+    </flight>
+
+    <flight>
+      <id>j2</id>
+      <airlineId>2</airlineId>
+      <origin>DOM</origin>
+      <destination>LTN</destination>
+      <distance>3000</distance>
+      <time>200</time>
+    </flight>
   </flights>
 
 </root>
