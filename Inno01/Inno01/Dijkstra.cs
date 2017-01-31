@@ -35,8 +35,7 @@ namespace Inno01
 
             while (current != dest && unVisitedNodes.Count() >= 0 )
             {
-                unVisitedNodes.Remove(current);
-                visitedNodes.Add(current);
+               
                 //GetDistance(source, current);
 
                 var neighbours = FindNeigbours(current);
@@ -44,21 +43,25 @@ namespace Inno01
                 if (neighbours.Count() != 0)
                 {
                     int dist = int.MaxValue;
-                    Flight edge = new Flight();
+                    Flight shortestEdge = new Flight();
 
                     foreach (City item in neighbours)
                     {
-                        edge = GetShortestEdge(current, item);
+                        var edge = GetShortestEdge(current, item);
                         if (edge.Distance < dist)
                         {
                             dist = edge.Distance;
                             closest = item;
+                            shortestEdge = edge;
                         }
                     }
                     previous.Add(closest, current);
-                    visitedEdges.Add(edge);
+                    visitedEdges.Add(shortestEdge);
                     //distance.Add(closest, edge.d);
                     current = closest;
+
+                    unVisitedNodes.Remove(current);
+                    visitedNodes.Add(current);
                 }
                 else if(previous.Count() != 0)
                 {
